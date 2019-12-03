@@ -74,7 +74,8 @@ namespace yy {
     {
       /* Tokens.  */
    enum yytokentype {
-
+     NUMBER = 258,
+     VARIABLE = 259
    };
 
     };
@@ -179,7 +180,7 @@ namespace yy {
     static const unsigned char yytable_[];
     static const signed char yytable_ninf_;
 
-    static const unsigned char yycheck_[];
+    static const signed char yycheck_[];
 
     /// For a state, its accessing symbol.
     static const unsigned char yystos_[];
@@ -250,7 +251,7 @@ namespace yy {
 
 } // yy
 /* Line 33 of lalr1.cc  */
-#line 254 "calc.tab.h"
+#line 255 "calc.tab.h"
 
 
 

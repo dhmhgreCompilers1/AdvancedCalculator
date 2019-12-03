@@ -8,14 +8,32 @@ using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 %}
-
+%verbose
 %error-verbose
 
 %start explist
-
+%token NUMBER VARIABLE
+%right '='
+%left '+' '-'
+%left '*' '/' '%'
 %%
 
-explist:;
+explist: expression ';'
+		| explist expression ';'
+		;
+
+expression : NUMBER
+		   | VARIABLE
+		   | '(' expression ')'
+		   | expression '+' expression
+		   | expression '-' expression
+		   | expression '*' expression
+		   | expression '/' expression		   
+		   | expression '%' expression
+		   | '+' expression 
+		   | '-' expression 
+		   | VARIABLE '=' expression
+		   ;
 
 %%
 

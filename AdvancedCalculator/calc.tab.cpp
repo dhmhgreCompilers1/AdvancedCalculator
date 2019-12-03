@@ -755,11 +755,13 @@ namespace yy {
 
   /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
      STATE-NUM.  */
-  const signed char parser::yypact_ninf_ = -1;
+  const signed char parser::yypact_ninf_ = -4;
   const signed char
   parser::yypact_[] =
   {
-        -1,     0,    -1
+        23,    -4,    -1,    23,    23,    23,    16,    38,    23,    24,
+      24,    30,    -4,    44,    23,    23,    23,    23,    23,    -4,
+       0,    -4,    -4,    24,    24,    -4,    -4,    -4
   };
 
   /* YYDEFACT[S] -- default reduction number in state S.  Performed when
@@ -768,21 +770,23 @@ namespace yy {
   const unsigned char
   parser::yydefact_[] =
   {
-         2,     0,     1
+         0,     4,     5,     0,     0,     0,     0,     0,     0,    12,
+      13,     0,     1,     0,     0,     0,     0,     0,     0,     2,
+      14,     6,     3,     7,     8,     9,    10,    11
   };
 
   /* YYPGOTO[NTERM-NUM].  */
   const signed char
   parser::yypgoto_[] =
   {
-        -1,    -1
+        -4,    -4,    -3
   };
 
   /* YYDEFGOTO[NTERM-NUM].  */
   const signed char
   parser::yydefgoto_[] =
   {
-        -1,     1
+        -1,     6,     7
   };
 
   /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -792,14 +796,24 @@ namespace yy {
   const unsigned char
   parser::yytable_[] =
   {
-         2
+         9,    10,    11,    13,     8,    20,    14,    15,    16,    17,
+      18,    23,    24,    25,    26,    27,    12,     0,     0,     1,
+       2,     0,     3,     4,     0,     0,     1,     2,     5,     3,
+       4,     0,    16,    17,    18,     5,    14,    15,    16,    17,
+      18,     0,     0,    21,    14,    15,    16,    17,    18,    19,
+      14,    15,    16,    17,    18,    22
   };
 
   /* YYCHECK.  */
-  const unsigned char
+  const signed char
   parser::yycheck_[] =
   {
-         0
+         3,     4,     5,     6,     5,     8,     6,     7,     8,     9,
+      10,    14,    15,    16,    17,    18,     0,    -1,    -1,     3,
+       4,    -1,     6,     7,    -1,    -1,     3,     4,    12,     6,
+       7,    -1,     8,     9,    10,    12,     6,     7,     8,     9,
+      10,    -1,    -1,    13,     6,     7,     8,     9,    10,    11,
+       6,     7,     8,     9,    10,    11
   };
 
   /* STOS_[STATE-NUM] -- The (internal number of the) accessing
@@ -807,7 +821,9 @@ namespace yy {
   const unsigned char
   parser::yystos_[] =
   {
-         0,     4,     0
+         0,     3,     4,     6,     7,    12,    15,    16,     5,    16,
+      16,    16,     0,    16,     6,     7,     8,     9,    10,    11,
+      16,    13,    11,    16,    16,    16,    16,    16
   };
 
 #if YYDEBUG
@@ -816,7 +832,8 @@ namespace yy {
   const unsigned short int
   parser::yytoken_number_[] =
   {
-         0,   256,   257
+         0,   256,   257,   258,   259,    61,    43,    45,    42,    47,
+      37,    59,    40,    41
   };
 #endif
 
@@ -824,14 +841,16 @@ namespace yy {
   const unsigned char
   parser::yyr1_[] =
   {
-         0,     3,     4
+         0,    14,    15,    15,    16,    16,    16,    16,    16,    16,
+      16,    16,    16,    16,    16
   };
 
   /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
   const unsigned char
   parser::yyr2_[] =
   {
-         0,     2,     0
+         0,     2,     2,     3,     1,     1,     3,     3,     3,     3,
+       3,     3,     2,     2,     3
   };
 
 
@@ -840,7 +859,9 @@ namespace yy {
   const char*
   const parser::yytname_[] =
   {
-    "$end", "error", "$undefined", "$accept", "explist", YY_NULL
+    "$end", "error", "$undefined", "NUMBER", "VARIABLE", "'='", "'+'",
+  "'-'", "'*'", "'/'", "'%'", "';'", "'('", "')'", "$accept", "explist",
+  "expression", YY_NULL
   };
 
 #if YYDEBUG
@@ -848,7 +869,11 @@ namespace yy {
   const parser::rhs_number_type
   parser::yyrhs_[] =
   {
-         4,     0,    -1,    -1
+        15,     0,    -1,    16,    11,    -1,    15,    16,    11,    -1,
+       3,    -1,     4,    -1,    12,    16,    13,    -1,    16,     6,
+      16,    -1,    16,     7,    16,    -1,    16,     8,    16,    -1,
+      16,     9,    16,    -1,    16,    10,    16,    -1,     6,    16,
+      -1,     7,    16,    -1,     4,     5,    16,    -1
   };
 
   /* YYPRHS[YYN] -- Index of the first RHS symbol of rule number YYN in
@@ -856,14 +881,16 @@ namespace yy {
   const unsigned char
   parser::yyprhs_[] =
   {
-         0,     0,     3
+         0,     0,     3,     6,    10,    12,    14,    18,    22,    26,
+      30,    34,    38,    41,    44
   };
 
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    18,    18
+         0,    21,    21,    22,    25,    26,    27,    28,    29,    30,
+      31,    32,    33,    34,    35
   };
 
   // Print the state stack on the debug stream.
@@ -906,6 +933,10 @@ namespace yy {
            0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,    10,     2,     2,
+      12,    13,     8,     6,     2,     7,     2,     9,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,    11,
+       2,     5,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -924,11 +955,7 @@ namespace yy {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2
+       2,     2,     2,     2,     2,     2,     1,     2,     3,     4
     };
     if ((unsigned int) t <= yyuser_token_number_max_)
       return translate_table[t];
@@ -937,23 +964,23 @@ namespace yy {
   }
 
   const int parser::yyeof_ = 0;
-  const int parser::yylast_ = 0;
-  const int parser::yynnts_ = 2;
+  const int parser::yylast_ = 55;
+  const int parser::yynnts_ = 3;
   const int parser::yyempty_ = -2;
-  const int parser::yyfinal_ = 2;
+  const int parser::yyfinal_ = 12;
   const int parser::yyterror_ = 1;
   const int parser::yyerrcode_ = 256;
-  const int parser::yyntokens_ = 3;
+  const int parser::yyntokens_ = 14;
 
-  const unsigned int parser::yyuser_token_number_max_ = 257;
+  const unsigned int parser::yyuser_token_number_max_ = 259;
   const parser::token_number_type parser::yyundef_token_ = 2;
 
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 955 "calc.tab.cpp"
+#line 982 "calc.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 20 "calc.y"
+#line 38 "calc.y"
 
 
 namespace yy{
