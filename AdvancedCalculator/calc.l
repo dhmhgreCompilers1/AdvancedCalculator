@@ -21,8 +21,8 @@ INT "0"|[1-9][0-9]*
 ")" {return ')';}
 "=" {return '=';}
 
-[a-zA-Z][a-zA-Z0-9_]*							{ cout << yytext << endl; return token::VARIABLE; }
-[+-]?({INT}?\.{INT})|({INT}\.{INT}?)			{ cout << yytext << endl; return token::NUMBER;}
-[+-]?{INT}										{ cout << yytext << endl; return token::NUMBER;}
+[a-zA-Z][a-zA-Z0-9_]*					{  return token::VARIABLE; }
+({INT}?\.{INT})|({INT}\.{INT}?)			{  return token::NUMBER;}
+{INT}									{  return token::NUMBER;}
 [ \t\r\n]+ ;
 %%
