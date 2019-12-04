@@ -24,12 +24,14 @@ public:
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
 	virtual string GetGraphVizLabel();
+	CSTNode* GetChild(int index);
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent);
 	virtual double Eval(CSTNode* parent)=0;
 
 	// ********** MODIFIER METHODS ***********
 	void SetParent(CSTNode* parent) { m_parent = parent; }
 
+	friend double VisitEvalHelper(CSTNode *node,int child);
 protected:
 	// Type of node
 	NodeType m_nodeType;

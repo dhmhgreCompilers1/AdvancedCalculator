@@ -15,9 +15,10 @@ void main(int argc, char** argv) {
 
 	dotfile = new ofstream("ST.dot", std::ofstream::out);
 	(*dotfile) << "digraph G{\n";
-	g_root->PrintSyntaxTree(dotfile,nullptr);
+	g_root->PrintSyntaxTree(dotfile,nullptr);	
 	(*dotfile) << "}";
 	dotfile->close();
 
+	g_root->Eval(nullptr);
 	system("dot -Tgif ST.dot -o ST.gif");
 }

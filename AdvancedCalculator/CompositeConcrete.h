@@ -98,6 +98,7 @@ private:
 class CExpressionVARIABLE : public CExpression {	
 public:
 	string m_text;
+	double m_value;
 	CExpressionVARIABLE(const char*);
 	virtual ~CExpressionVARIABLE();
 	string GetGraphVizLabel() override;
