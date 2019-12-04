@@ -70,16 +70,27 @@ void CExpressionAssignment::PrintSyntaxTree(ofstream* dotfile) {
 	CSTNode::PrintSyntaxTree(dotfile);
 }
 
-CExpressionVARIABLE::CExpressionVARIABLE(char* text) : CExpression(EXP_VARIABLE, 0) {}
+CExpressionVARIABLE::CExpressionVARIABLE(char* text) : CExpression(EXP_VARIABLE, 0) {
+	m_text = string(text);
+}
 CExpressionVARIABLE::~CExpressionVARIABLE() {}
 void CExpressionVARIABLE::PrintSyntaxTree(ofstream* dotfile) {
 	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	CSTNode::PrintSyntaxTree(dotfile);
 }
+string CExpressionVARIABLE::GetGraphVizLabel() {
+	return m_graphvizLabel + "_" + to_string(m_serial) + "_" +m_text;
+}
 
-CExpressionNUMBER::CExpressionNUMBER(char* text, double value) : CExpression(EXP_NUMBER, 0) {}
+CExpressionNUMBER::CExpressionNUMBER(char* text, double value) : CExpression(EXP_NUMBER, 0) {
+	m_text = string(text);
+	m_value = value;
+}
 CExpressionNUMBER::~CExpressionNUMBER() {}
 void CExpressionNUMBER::PrintSyntaxTree(ofstream* dotfile) {
 	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	CSTNode::PrintSyntaxTree(dotfile);
+}
+string CExpressionNUMBER::GetGraphVizLabel() {
+	return m_graphvizLabel + "_" + to_string(m_serial) + "_" + m_text;
 }

@@ -26,7 +26,7 @@ INT "0"|[1-9][0-9]*
 											return token::VARIABLE; }
 ({INT}?\.{INT})|({INT}\.{INT}?)			{  yylval->node = new CExpressionNUMBER(yytext,atof(yytext));
 										   return token::NUMBER;}
-{INT}									{   yylval->node = new CExpressionNUMBER(yytext,atoi(yytext));
+{INT}									{   yylval->node = new CExpressionNUMBER(yytext,(double)atoi(yytext));
 											return token::NUMBER;}
 [ \t\r\n]+ ;
 %%

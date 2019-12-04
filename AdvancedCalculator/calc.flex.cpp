@@ -802,7 +802,7 @@ YY_RULE_SETUP
 case 12:
 YY_RULE_SETUP
 #line 29 "calc.l"
-{   yylval->node = new CExpressionNUMBER(yytext,atoi(yytext));
+{   yylval->node = new CExpressionNUMBER(yytext,(double)atoi(yytext));
 											return token::NUMBER;}
 	YY_BREAK
 case 13:

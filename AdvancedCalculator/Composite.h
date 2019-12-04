@@ -23,7 +23,7 @@ public:
 
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
-	string GetGraphVizLabel();
+	virtual string GetGraphVizLabel();
 	virtual void PrintSyntaxTree(ofstream* dotfile);
 
 

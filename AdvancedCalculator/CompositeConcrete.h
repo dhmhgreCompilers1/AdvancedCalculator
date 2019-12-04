@@ -86,18 +86,24 @@ public:
 private:
 };
 
-class CExpressionVARIABLE : public CExpression {
+class CExpressionVARIABLE : public CExpression {	
 public:
+	string m_text;
 	CExpressionVARIABLE(char*);
 	virtual ~CExpressionVARIABLE();
+	string GetGraphVizLabel() override;
 	virtual void PrintSyntaxTree(ofstream* dotfile) override;
+	
 private:
 };
 
 class CExpressionNUMBER : public CExpression {
 public:
+	string m_text;
+	double m_value;
 	CExpressionNUMBER(char*, double);
 	virtual ~CExpressionNUMBER();
+	string GetGraphVizLabel() override;
 	virtual void PrintSyntaxTree(ofstream* dotfile) override;
 private:
 };
