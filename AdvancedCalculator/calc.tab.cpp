@@ -37,13 +37,12 @@
 
 #include <iostream>
 #include "calc.tab.h"
-
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 
 /* Line 279 of lalr1.cc  */
-#line 47 "calc.tab.cpp"
+#line 46 "calc.tab.cpp"
 
 
 #include "calc.tab.h"
@@ -51,7 +50,7 @@ extern FILE *yyin;
 /* User implementation prologue.  */
 
 /* Line 285 of lalr1.cc  */
-#line 55 "calc.tab.cpp"
+#line 54 "calc.tab.cpp"
 
 
 # ifndef YY_NULL
@@ -146,7 +145,7 @@ do {					\
 
 namespace yy {
 /* Line 353 of lalr1.cc  */
-#line 150 "calc.tab.cpp"
+#line 149 "calc.tab.cpp"
 
   /* Return YYSTR after stripping away unnecessary quotes and
      backslashes, so that it's suitable for yyerror.  The heuristic is
@@ -453,9 +452,15 @@ namespace yy {
     YY_REDUCE_PRINT (yyn);
     switch (yyn)
       {
-        
+          case 6:
 /* Line 670 of lalr1.cc  */
-#line 459 "calc.tab.cpp"
+#line 27 "calc.y"
+    { (yyval) = (yysemantic_stack_[(3) - (2)]); }
+    break;
+
+
+/* Line 670 of lalr1.cc  */
+#line 464 "calc.tab.cpp"
       default:
         break;
       }
@@ -978,7 +983,7 @@ namespace yy {
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 982 "calc.tab.cpp"
+#line 987 "calc.tab.cpp"
 /* Line 1142 of lalr1.cc  */
 #line 38 "calc.y"
 

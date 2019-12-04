@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="calc.tab.h" />
     <ClInclude Include="Composite.h" />
+    <ClInclude Include="CompositeConcrete.h" />
     <ClInclude Include="location.hh" />
     <ClInclude Include="position.hh" />
     <ClInclude Include="stack.hh" />
@@ -160,6 +161,7 @@
     <ClCompile Include="calc.flex.cpp" />
     <ClCompile Include="calc.tab.cpp" />
     <ClCompile Include="Composite.cpp" />
+    <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

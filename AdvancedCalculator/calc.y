@@ -3,13 +3,13 @@
 %{
 #include <iostream>
 #include "calc.tab.h"
-
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 %}
 %verbose
 %error-verbose
+
 
 %start explist
 %token NUMBER VARIABLE
@@ -18,13 +18,13 @@ extern FILE *yyin;
 %left '*' '/' '%'
 %%
 
-explist: expression ';'
-		| explist expression ';'
+explist: expression ';'			
+		| explist expression ';' 
 		;
 
-expression : NUMBER
+expression : NUMBER 
 		   | VARIABLE
-		   | '(' expression ')'
+		   | '(' expression ')'  { $$ = $2; }
 		   | expression '+' expression
 		   | expression '-' expression
 		   | expression '*' expression
