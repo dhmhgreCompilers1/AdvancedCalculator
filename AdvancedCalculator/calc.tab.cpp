@@ -37,12 +37,13 @@
 
 #include <iostream>
 #include "calc.tab.h"
+#include "CompositeConcrete.h"
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 
 /* Line 279 of lalr1.cc  */
-#line 46 "calc.tab.cpp"
+#line 47 "calc.tab.cpp"
 
 
 #include "calc.tab.h"
@@ -50,7 +51,7 @@ extern FILE *yyin;
 /* User implementation prologue.  */
 
 /* Line 285 of lalr1.cc  */
-#line 54 "calc.tab.cpp"
+#line 55 "calc.tab.cpp"
 
 
 # ifndef YY_NULL
@@ -145,7 +146,7 @@ do {					\
 
 namespace yy {
 /* Line 353 of lalr1.cc  */
-#line 149 "calc.tab.cpp"
+#line 150 "calc.tab.cpp"
 
   /* Return YYSTR after stripping away unnecessary quotes and
      backslashes, so that it's suitable for yyerror.  The heuristic is
@@ -454,13 +455,13 @@ namespace yy {
       {
           case 6:
 /* Line 670 of lalr1.cc  */
-#line 27 "calc.y"
-    { (yyval) = (yysemantic_stack_[(3) - (2)]); }
+#line 36 "calc.y"
+    { (yyval.node) = (yysemantic_stack_[(3) - (2)].node); }
     break;
 
 
 /* Line 670 of lalr1.cc  */
-#line 464 "calc.tab.cpp"
+#line 465 "calc.tab.cpp"
       default:
         break;
       }
@@ -894,8 +895,8 @@ namespace yy {
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    21,    21,    22,    25,    26,    27,    28,    29,    30,
-      31,    32,    33,    34,    35
+         0,    30,    30,    31,    34,    35,    36,    37,    38,    39,
+      40,    41,    42,    43,    44
   };
 
   // Print the state stack on the debug stream.
@@ -983,9 +984,9 @@ namespace yy {
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 987 "calc.tab.cpp"
+#line 988 "calc.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 38 "calc.y"
+#line 47 "calc.y"
 
 
 namespace yy{

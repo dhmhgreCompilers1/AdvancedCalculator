@@ -3,6 +3,7 @@
 %{
 #include <iostream>
 #include "calc.tab.h"
+#include "CompositeConcrete.h"
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
@@ -10,12 +11,20 @@ extern FILE *yyin;
 %verbose
 %error-verbose
 
+%code requires{
+	#include "Composite.h"
+}
+
+%union{
+	CSTNode *node;
+}
 
 %start explist
-%token NUMBER VARIABLE
+%token <node> NUMBER VARIABLE
 %right '='
 %left '+' '-'
 %left '*' '/' '%'
+%type <node> explist expression
 %%
 
 explist: expression ';'			
