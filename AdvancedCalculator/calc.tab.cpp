@@ -453,15 +453,87 @@ namespace yy {
     YY_REDUCE_PRINT (yyn);
     switch (yyn)
       {
-          case 6:
+          case 2:
+/* Line 670 of lalr1.cc  */
+#line 30 "calc.y"
+    { (yyval.node) = g_root = new CExpList((CExpression*) (yysemantic_stack_[(2) - (1)].node)); }
+    break;
+
+  case 3:
+/* Line 670 of lalr1.cc  */
+#line 31 "calc.y"
+    { (yyval.node) = g_root = new CExpList((CExpList *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (2)].node)); }
+    break;
+
+  case 4:
+/* Line 670 of lalr1.cc  */
+#line 34 "calc.y"
+    { (yyval.node)= (yysemantic_stack_[(1) - (1)].node); }
+    break;
+
+  case 5:
+/* Line 670 of lalr1.cc  */
+#line 35 "calc.y"
+    { (yyval.node)= (yysemantic_stack_[(1) - (1)].node); }
+    break;
+
+  case 6:
 /* Line 670 of lalr1.cc  */
 #line 36 "calc.y"
     { (yyval.node) = (yysemantic_stack_[(3) - (2)].node); }
     break;
 
+  case 7:
+/* Line 670 of lalr1.cc  */
+#line 37 "calc.y"
+    { (yyval.node) = new CExpressionAddition((CExpression *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+  case 8:
+/* Line 670 of lalr1.cc  */
+#line 38 "calc.y"
+    { (yyval.node) = new CExpressionSubtraction((CExpression *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+  case 9:
+/* Line 670 of lalr1.cc  */
+#line 39 "calc.y"
+    { (yyval.node) = new CExpressionMultiplication((CExpression *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+  case 10:
+/* Line 670 of lalr1.cc  */
+#line 40 "calc.y"
+    { (yyval.node) = new CExpressionDivision((CExpression *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+  case 11:
+/* Line 670 of lalr1.cc  */
+#line 41 "calc.y"
+    { (yyval.node) = new CExpressionModulo((CExpression *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+  case 12:
+/* Line 670 of lalr1.cc  */
+#line 42 "calc.y"
+    { (yyval.node) = new CExpressionUnaryPlus((CExpression*) (yysemantic_stack_[(2) - (2)].node)); }
+    break;
+
+  case 13:
+/* Line 670 of lalr1.cc  */
+#line 43 "calc.y"
+    { (yyval.node) = new CExpressionUnaryMinus((CExpression*) (yysemantic_stack_[(2) - (2)].node)); }
+    break;
+
+  case 14:
+/* Line 670 of lalr1.cc  */
+#line 44 "calc.y"
+    { (yyval.node) = new CExpressionAssignment((CExpressionVARIABLE *)(yysemantic_stack_[(3) - (1)].node), (CExpression*) (yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
 
 /* Line 670 of lalr1.cc  */
-#line 465 "calc.tab.cpp"
+#line 537 "calc.tab.cpp"
       default:
         break;
       }
@@ -984,7 +1056,7 @@ namespace yy {
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 988 "calc.tab.cpp"
+#line 1060 "calc.tab.cpp"
 /* Line 1142 of lalr1.cc  */
 #line 47 "calc.y"
 

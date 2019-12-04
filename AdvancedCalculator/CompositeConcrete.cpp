@@ -5,7 +5,7 @@ CExpList::CExpList(CExpList* explst, CExpression* expr) : CSTNode(EXPLIST, 2, ex
 CExpList::~CExpList() {}
 void CExpList::PrintSyntaxTree(ofstream* dotfile) {}
 
-CExpression::CExpression(NodeType tp, int num,CExpression *arg1, CExpression* arg2) :CSTNode(tp,2,arg1,arg2)  {	 }
+CExpression::CExpression(NodeType tp, int num,CExpression *arg1, CExpression* arg2) :CSTNode(tp,num,arg1,arg2)  {	 }
 CExpression::~CExpression() {}
 
 
