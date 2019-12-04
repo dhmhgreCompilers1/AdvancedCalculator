@@ -25,7 +25,7 @@ public:
 	NodeType GetNodeType();
 	virtual string GetGraphVizLabel();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent);
-
+	virtual double Eval(CSTNode* parent)=0;
 
 	// ********** MODIFIER METHODS ***********
 	void SetParent(CSTNode* parent) { m_parent = parent; }

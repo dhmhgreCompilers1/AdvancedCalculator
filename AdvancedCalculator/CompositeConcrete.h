@@ -12,6 +12,7 @@ public:
 	CExpList(CExpList* explst, CExpression* expr);
 	virtual ~CExpList();
 	virtual void PrintSyntaxTree(ofstream* dotfile,CSTNode *parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -27,6 +28,7 @@ public:
 	CExpressionAddition(CExpression*, CExpression*);
 	virtual ~CExpressionAddition();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -35,6 +37,7 @@ public:
 	CExpressionSubtraction(CExpression*, CExpression*);
 	virtual ~CExpressionSubtraction();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -43,6 +46,7 @@ public:
 	CExpressionMultiplication(CExpression*, CExpression*);
 	virtual ~CExpressionMultiplication();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -51,6 +55,7 @@ public:
 	CExpressionDivision(CExpression*, CExpression*);
 	virtual ~CExpressionDivision();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -59,6 +64,7 @@ public:
 	CExpressionModulo(CExpression*, CExpression*);
 	virtual ~CExpressionModulo();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -67,6 +73,7 @@ public:
 	CExpressionUnaryPlus(CExpression*);
 	virtual ~CExpressionUnaryPlus();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -75,6 +82,7 @@ public:
 	CExpressionUnaryMinus(CExpression*);
 	virtual ~CExpressionUnaryMinus();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -83,6 +91,7 @@ public:
 	CExpressionAssignment(CExpressionVARIABLE*, CExpression*);
 	virtual ~CExpressionAssignment();
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -93,7 +102,7 @@ public:
 	virtual ~CExpressionVARIABLE();
 	string GetGraphVizLabel() override;
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
-	
+	double Eval(CSTNode* parent) override;
 private:
 };
 
@@ -105,6 +114,7 @@ public:
 	virtual ~CExpressionNUMBER();
 	string GetGraphVizLabel() override;
 	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) override;
+	double Eval(CSTNode* parent) override;
 private:
 };
 

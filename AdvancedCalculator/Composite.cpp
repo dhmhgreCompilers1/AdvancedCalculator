@@ -48,3 +48,5 @@ void CSTNode::PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) {
 		(*it)->PrintSyntaxTree(dotfile,this);
 	}
 }
+
+

@@ -97,3 +97,5 @@ void CExpressionNUMBER::PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) {
 string CExpressionNUMBER::GetGraphVizLabel() {
 	return m_graphvizLabel + "_" + to_string(m_serial) + "_" + m_text;
 }
+
+

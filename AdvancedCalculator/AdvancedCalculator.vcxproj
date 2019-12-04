@@ -164,6 +164,7 @@
     <ClCompile Include="calc.tab.cpp" />
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="CompositeConcrete.cpp" />
+    <ClCompile Include="Eval.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SymbolTable.cpp" />
   </ItemGroup>
