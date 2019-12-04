@@ -41,10 +41,10 @@ string CSTNode::GetGraphVizLabel() {
 	return m_graphvizLabel + "_" + to_string(m_serial);
 }
 
-void CSTNode::PrintSyntaxTree(ofstream* dotfile) {
+void CSTNode::PrintSyntaxTree(ofstream* dotfile, CSTNode* parent) {
 	list<CSTNode*>::iterator it;
 	cout << "Visiting node " << m_graphvizLabel << std::endl;
 	for (it = m_children->begin(); it != m_children->end(); it++) {
-		(*it)->PrintSyntaxTree(dotfile);
+		(*it)->PrintSyntaxTree(dotfile,this);
 	}
 }

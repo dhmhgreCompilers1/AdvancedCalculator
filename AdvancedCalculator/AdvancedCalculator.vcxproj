@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,6 +157,7 @@
     <ClInclude Include="location.hh" />
     <ClInclude Include="position.hh" />
     <ClInclude Include="stack.hh" />
+    <ClInclude Include="SymbolTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="calc.flex.cpp" />
@@ -163,6 +165,7 @@
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SymbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="calc.output" />

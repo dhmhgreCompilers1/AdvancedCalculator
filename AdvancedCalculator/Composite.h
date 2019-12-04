@@ -24,7 +24,7 @@ public:
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
 	virtual string GetGraphVizLabel();
-	virtual void PrintSyntaxTree(ofstream* dotfile);
+	virtual void PrintSyntaxTree(ofstream* dotfile, CSTNode* parent);
 
 
 	// ********** MODIFIER METHODS ***********

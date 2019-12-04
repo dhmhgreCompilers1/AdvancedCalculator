@@ -465,11 +465,12 @@ char *yytext;
 #include <cstdlib>
 #include "calc.tab.h"
 #include "CompositeConcrete.h"
+#include "SymbolTable.h"
 using namespace std;
 #define YY_DECL int yylex(yy::parser::semantic_type *yylval)
 typedef yy::parser::token token;
-#line 471 "calc.flex.cpp"
 #line 472 "calc.flex.cpp"
+#line 473 "calc.flex.cpp"
 
 #define INITIAL 0
 
@@ -683,9 +684,9 @@ YY_DECL
 		}
 
 	{
-#line 14 "calc.l"
+#line 15 "calc.l"
 
-#line 688 "calc.flex.cpp"
+#line 689 "calc.flex.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -744,79 +745,79 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "calc.l"
+#line 16 "calc.l"
 {return '+';}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "calc.l"
+#line 17 "calc.l"
 {return '-';}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "calc.l"
+#line 18 "calc.l"
 {return '*';}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 18 "calc.l"
+#line 19 "calc.l"
 {return '/';}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 19 "calc.l"
+#line 20 "calc.l"
 {return '%';}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 20 "calc.l"
+#line 21 "calc.l"
 {return ';';}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 21 "calc.l"
+#line 22 "calc.l"
 {return '(';}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 22 "calc.l"
+#line 23 "calc.l"
 {return ')';}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 23 "calc.l"
+#line 24 "calc.l"
 {return '=';}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "calc.l"
-{   yylval->node = new CExpressionVARIABLE(yytext);
+#line 26 "calc.l"
+{   yylval->node = g_symbolTable.GetSymbol(yytext);
 											return token::VARIABLE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 27 "calc.l"
+#line 28 "calc.l"
 {  yylval->node = new CExpressionNUMBER(yytext,atof(yytext));
 										   return token::NUMBER;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 29 "calc.l"
+#line 30 "calc.l"
 {   yylval->node = new CExpressionNUMBER(yytext,(double)atoi(yytext));
 											return token::NUMBER;}
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 31 "calc.l"
+#line 32 "calc.l"
 ;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 32 "calc.l"
+#line 33 "calc.l"
 ECHO;
 	YY_BREAK
-#line 819 "calc.flex.cpp"
+#line 820 "calc.flex.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1821,5 +1822,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 32 "calc.l"
+#line 33 "calc.l"
 

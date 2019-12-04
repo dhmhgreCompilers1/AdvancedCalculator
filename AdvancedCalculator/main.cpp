@@ -15,7 +15,7 @@ void main(int argc, char** argv) {
 
 	dotfile = new ofstream("ST.dot", std::ofstream::out);
 	(*dotfile) << "digraph G{\n";
-	g_root->PrintSyntaxTree(dotfile);
+	g_root->PrintSyntaxTree(dotfile,nullptr);
 	(*dotfile) << "}";
 	dotfile->close();
 
